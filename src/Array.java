@@ -42,4 +42,14 @@ public class Array {
         return -1;
     }
 
+    public int max() {
+        if(count == 0)
+            throw new IllegalArgumentException("null array");
+        int max = 0;
+        for(int i = 0; i < count; i++) {
+            if(array[i] > array[max]) max = i;
+        }
+        return max;
+    }
+
 }
