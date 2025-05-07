@@ -8,8 +8,10 @@ public class Main {
         array.insert(11);
         array.insert(14);
         array.insert(79);
-        array.deleteAt(1);
+        //array.deleteAt(0);
         array.print();
+        System.out.println(array.search(79));
+
 
 
     }

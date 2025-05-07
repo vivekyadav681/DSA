@@ -7,15 +7,12 @@ public class Array {
     }
 
     public void print() {
-
         for (int i = 0; i < count; i++) {
             System.out.println(array[i]);
         }
-
     }
 
     public void insert(int number) {
-
         if(array.length == count) {
             int[] newArray = new int[count * 2];
             for(int i = 0; i < count; i++) {
@@ -23,21 +20,26 @@ public class Array {
             }
             array = newArray;
         }
-
         array[count++] = number;
     }
 
     public void deleteAt(int index) {
-        if(index > count) {
-            System.out.println("element does not exist.");
-        }
-        else if (index != count) {
-            for(int i = index; i < count-1; i++) {
-                array[i] = array[i+1];
-            }
-            count--;
+        if((index >= count) || (index < 0)) {
+            throw new IllegalArgumentException();
         }
 
+        for(int i = index; i < count; i++) {
+            array[i] = array[i+1];
+        }
+        count--;
+    }
+
+    public int search(int number) {
+        for(int i = 0; i < count; i++) {
+            if(array[i] == number)
+                return i;
+        }
+        return -1;
     }
 
 }
