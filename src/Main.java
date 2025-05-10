@@ -7,15 +7,8 @@ public class Main {
         array.insert(8);
         array.insert(11);
         array.insert(79);
+
         array.reverse();
-        System.out.println(array.lastElement());
         array.print();
-        System.out.println("############");
-        for(int i = 0; i < 4; i++){
-            System.out.println(array.get(i));
-        }
-
-
-
     }
 }
