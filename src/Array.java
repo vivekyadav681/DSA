@@ -52,4 +52,24 @@ public class Array {
         return max;
     }
 
+    public void reverse() {
+        if(count == 0)
+            throw new IllegalArgumentException("null array.");
+
+        for (int i = 0; i < count-1; i++) {
+            int num = array[i];
+            array[i] = array[(count-1)-i];
+            array[count-i] = num;
+        }
+    }
+
+    public int lastElement() {
+        return array[count];
+    }
+    public int get(int index) {
+        if (index >= count)
+            throw new IllegalArgumentException("index not in array");
+        return array[index];
+    }
+
 }
