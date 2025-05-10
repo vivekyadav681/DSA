@@ -56,15 +56,15 @@ public class Array {
         if(count == 0)
             throw new IllegalArgumentException("null array.");
 
-        for (int i = 0; i < count-1; i++) {
+        for (int i = 0; i < count/2; i++) {
             int num = array[i];
             array[i] = array[(count-1)-i];
-            array[count-i] = num;
+            array[count-1-i] = num;
         }
     }
 
     public int lastElement() {
-        return array[count];
+        return array[count-1];
     }
     public int get(int index) {
         if (index >= count)
