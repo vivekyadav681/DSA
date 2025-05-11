@@ -7,8 +7,20 @@ public class Main {
         array.insert(8);
         array.insert(11);
         array.insert(79);
+        array.insert(67);
+        array.insert(66);
 
-        array.reverse();
-        array.print();
+        array.insertAt(55, 2);
+        array.insertAt(49, 3);
+        //array.print();
+        Array array2 = new Array(4);
+        array2.insert(2);
+        array2.insert(5);
+        array2.insert(79);
+        array2.insert(85);
+        array2.insert(55);
+        System.out.println(array);
+
+        System.out.println(array.intersect(array2));
     }
 }
