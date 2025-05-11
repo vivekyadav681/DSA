@@ -19,8 +19,8 @@ public class Main {
         array2.insert(79);
         array2.insert(85);
         array2.insert(55);
+        array.insert(4);
         System.out.println(array);
-
         System.out.println(array.intersect(array2));
     }
 }
