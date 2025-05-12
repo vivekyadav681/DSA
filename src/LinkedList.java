@@ -14,7 +14,7 @@ public class LinkedList {
     public void addLast(int value) {
         var node = new Node(value);
 
-        if (first == null) {
+        if (isEmpty()) {
             first = last = node;
         }
         else {
@@ -25,11 +25,12 @@ public class LinkedList {
 
     public void addFirst(int value) {
         var node = new Node(value);
-        if(first == null) {
+        if(isEmpty()) {
             first = last = node;
+        } else {
+            node.next = first;
+            first = node;
         }
-        node.next = first;
-        first = node;
     }
 
     public void print() {
@@ -46,6 +47,25 @@ public class LinkedList {
             }
         }
     }
+
+    public int indexOf(int num) {
+        int index = 0;
+        if (!isEmpty()) {
+            var node = first;
+            while (true) {
+                if (num == node.value)
+                    return index;
+                node = node.next;
+                index++;
+            }
+        }
+        return -1;
+    }
+
+
+        private boolean isEmpty () {
+            return (first == null);
+        }
 
 
 
