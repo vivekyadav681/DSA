@@ -1,4 +1,5 @@
 public class LinkedList {
+
     private class Node {
         private int value;
         private Node next;
@@ -62,17 +63,8 @@ public class LinkedList {
         return -1;
     }
 
+    private boolean isEmpty () {
+        return (first == null);
+    }
 
-        private boolean isEmpty () {
-            return (first == null);
-        }
-
-
-
-    //addfirst
-    //addLast
-    //deleteFirst
-    //deleteLast
-    //contains
-    //indexOf
 }
