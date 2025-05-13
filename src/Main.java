@@ -1,4 +1,6 @@
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,8 +9,8 @@ public class Main {
         list.addLast(10);
         list.addLast(15);
         list.addLast(18);
-        //System.out.println(list.indexOf(15));
-
+        list.addFirst(78);
+        list.reverse();
         list.print();
     }
 }
