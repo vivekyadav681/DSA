@@ -9,8 +9,10 @@ public class Main {
         list.addLast(10);
         list.addLast(15);
         list.addLast(18);
-        list.addFirst(78);
-        list.reverse();
+        list.addFirst(55);
+        list.addLast(34);
         list.print();
+        System.out.println("######");
+        System.out.println(list.KthFromLast(8));
     }
 }

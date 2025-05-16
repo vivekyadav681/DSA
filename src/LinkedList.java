@@ -142,6 +142,21 @@ public class LinkedList {
         first = previous;
     }
 
+    public int KthFromLast(int k) {
+        if (isEmpty() || k > (size - k))
+            throw new NoSuchElementException();
 
+        Node one = first;
+        Node two = first;
+
+        for(int i = 0; i < k-1; i++) {
+            two = two.next;
+        }
+        while (two != last) {
+            one = one.next;
+            two = two.next;
+        }
+        return one.value;
+    }
 
 }
