@@ -143,8 +143,8 @@ public class LinkedList {
     }
 
     public int KthFromLast(int k) {
-        if (isEmpty() || k > (size - k))
-            throw new NoSuchElementException();
+        if (isEmpty() || k > size)
+            throw new IllegalArgumentException();
 
         Node one = first;
         Node two = first;

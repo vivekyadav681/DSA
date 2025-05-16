@@ -13,6 +13,6 @@ public class Main {
         list.addLast(34);
         list.print();
         System.out.println("######");
-        System.out.println(list.KthFromLast(8));
+        System.out.println(list.KthFromLast(0));
     }
 }
