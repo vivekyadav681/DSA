@@ -82,6 +82,7 @@ public class LinkedList {
         }
         size--;
     }
+
     private boolean isEmpty () {
         return (first == null);
     }
