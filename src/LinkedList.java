@@ -9,6 +9,12 @@ public class LinkedList {
         public Node(int value) {
             this.value = value;
         }
+
+        @Override
+        public String toString() {
+            return "Node[" + value +
+                    ']';
+        }
     }
 
     private Node first;
@@ -160,4 +166,43 @@ public class LinkedList {
         return one.value;
     }
 
+    public void middleElement() {
+        if (isEmpty())
+            throw new NoSuchElementException("the list is empty.");
+
+        Node one = first;
+        Node two = first;
+        while (two != last && two.next != last) {
+            one = one.next;
+            two = two.next.next;
+        }
+
+        if(two == last) {
+            System.out.println(one.value);
+        }
+        else {
+            System.out.println(one.value + ", " + one.next.value);
+        }
+    }
+
+    public Node previous(Node node) {
+        Node one = first;
+        while(one != last) {
+            if(one.next == node) {
+                return one;
+            }
+            one = one.next;
+        }
+        return null;
+    }
+
+    public Node get(int value) {
+        Node node = first;
+        while(node != last) {
+            if(node.value == value)
+                return node;
+            node = node.next;
+        }
+        return null;
+    }
 }
