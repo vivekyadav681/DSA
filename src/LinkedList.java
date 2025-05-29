@@ -114,6 +114,10 @@ public class LinkedList {
         size--;
     }
 
+    public int getLast() {
+        return last.value;
+    }
+
     public int size() {
         return size;
     }
