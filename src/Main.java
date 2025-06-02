@@ -14,5 +14,12 @@ public class Main {
         System.out.println("popped: " + stack.pop());
         stack.print();
         System.out.println("size: " + stack.getSize());
+        System.out.println("peeked value: " + stack.peek());
+        System.out.println(stack.isEmpty());
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        System.out.println(stack.peek());
     }
 }

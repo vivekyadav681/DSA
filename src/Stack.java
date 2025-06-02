@@ -51,4 +51,8 @@ public class Stack {
     public int getSize() {
         return size;
     }
+
+    public int peek() {
+        return top.data;
+    }
 }
