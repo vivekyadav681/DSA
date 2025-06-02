@@ -1,23 +1,45 @@
+import java.util.NoSuchElementException;
+
 public class Stack {
 
-    private LinkedList list = new LinkedList();
+    private static class StackNode {
+        int data;
+        StackNode prev;
 
-    public void push(int element) {
-        list.addLast(element);
+        public StackNode(int data) {
+            this.data = data;
+        }
+    }
+
+    private StackNode top;
+    private StackNode base;
+    int size;
+
+    public void push(int data) {
+        StackNode node = new StackNode(data);
+        node.prev = top;
+        top = node;
+        size++;
+    }
+
+    public boolean isEmpty() {
+        return top == null;
     }
 
     public int pop() {
-        int size = list.size();
-        int popped = list.getLast();
-        list.deleteLast();
-        return popped;
-    }
-
-    public int peek() {
-        return list.getLast();
+        if(isEmpty())
+            throw new NoSuchElementException("Stack is empty");
+        StackNode node = top;
+        top = top.prev;
+        return node.data;
     }
 
     public void print() {
-        list.print();
+        if(isEmpty()) throw new NoSuchElementException("Stack is empty");
+        StackNode node = top;
+        while(node.prev != null) {
+            System.out.println(node.data);
+            node = node.prev;
+        }
     }
 }
