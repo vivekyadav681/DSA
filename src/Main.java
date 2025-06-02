@@ -11,6 +11,8 @@ public class Main {
         stack.push(20);
         stack.push(30);
         stack.push(40);
+        System.out.println("popped: " + stack.pop());
         stack.print();
+        System.out.println("size: " + stack.getSize());
     }
 }

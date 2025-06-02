@@ -17,8 +17,12 @@ public class Stack {
 
     public void push(int data) {
         StackNode node = new StackNode(data);
-        node.prev = top;
-        top = node;
+        if(isEmpty())
+            top = node;
+        else {
+            node.prev = top;
+            top = node;
+        }
         size++;
     }
 
@@ -31,15 +35,20 @@ public class Stack {
             throw new NoSuchElementException("Stack is empty");
         StackNode node = top;
         top = top.prev;
+        size--;
         return node.data;
     }
 
     public void print() {
         if(isEmpty()) throw new NoSuchElementException("Stack is empty");
         StackNode node = top;
-        while(node.prev != null) {
+        while(node != null) {
             System.out.println(node.data);
             node = node.prev;
         }
+    }
+
+    public int getSize() {
+        return size;
     }
 }
