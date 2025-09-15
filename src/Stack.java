@@ -13,12 +13,13 @@ public class Stack {
 
     private StackNode top;
     private StackNode base;
-    int size;
+    private int size;
 
     public void push(int data) {
         StackNode node = new StackNode(data);
-        if(isEmpty())
+        if(isEmpty()) {
             top = node;
+        }
         else {
             node.prev = top;
             top = node;
