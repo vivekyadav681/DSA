@@ -3,10 +3,12 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        HashTable hash = new HashTable();
-        hash.put(2, "something");
-        hash.put(33, "something else");
-        hash.put(41, "idk what");
-        System.out.println(hash);
+        BinaryTree tree = new BinaryTree();
+        tree.insert(15);
+        tree.insert(20);
+        tree.insert(10);
+        tree.insert(22);
+        tree.insert(7);
+        System.out.println("done");
     }
 }
