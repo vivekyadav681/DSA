@@ -9,6 +9,9 @@ public class Main {
         tree.insert(10);
         tree.insert(22);
         tree.insert(7);
+        tree.insert(18);
+        tree.insert(2);
         System.out.println("done");
+        System.out.println(tree.find(200));
     }
 }

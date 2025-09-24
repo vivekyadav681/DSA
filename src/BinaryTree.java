@@ -7,6 +7,11 @@ public class BinaryTree {
         public Node(int data) {
             this.data = data;
         }
+
+        @Override
+        public String toString() {
+            return "data = " + data;
+        }
     }
     private Node root;
 
@@ -33,6 +38,22 @@ public class BinaryTree {
                 current = current.leftChild;
             }
         }
+    }
+
+    public boolean find(int data) {
+        Node current = root;
+        while (current != null) {
+            if(current.data == data) {
+                return true;
+            }
+            else if( current.data > data) {
+                 current = current.leftChild;
+            }
+            else  {
+                current = current.rightChild;
+            }
+        }
+        return false;
     }
 
 }
