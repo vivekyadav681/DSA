@@ -13,5 +13,6 @@ public class Main {
         tree.insert(2);
         System.out.println("done");
         System.out.println(tree.find(200));
+        tree.traverseInOrder();
     }
 }

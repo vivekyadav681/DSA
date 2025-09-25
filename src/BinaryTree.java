@@ -1,4 +1,5 @@
 public class BinaryTree {
+
     private class Node {
         private int data;
         private Node leftChild;
@@ -13,7 +14,9 @@ public class BinaryTree {
             return "data = " + data;
         }
     }
+
     private Node root;
+
 
     public void insert(int data) {
         Node node = new Node(data);
@@ -40,6 +43,7 @@ public class BinaryTree {
         }
     }
 
+
     public boolean find(int data) {
         Node current = root;
         while (current != null) {
@@ -54,6 +58,48 @@ public class BinaryTree {
             }
         }
         return false;
+    }
+
+
+    public void traversePreOrder() {
+        traversePreOrder(root);
+    }
+
+
+    private void traversePreOrder(Node root) {
+        if (root == null) return;
+
+        System.out.println(root.data);
+        traversePreOrder(root.leftChild);
+        traversePreOrder(root.rightChild);
+    }
+
+
+    public void traverseInOrder() {
+        traverseInOrder(root);
+    }
+
+
+    private void traverseInOrder(Node root) {
+        if(root == null) return;
+
+        traverseInOrder(root.leftChild);
+        System.out.println(root.data);
+        traverseInOrder(root.rightChild);
+    }
+
+
+    public void traversePostOrder() {
+        traversePostOrder(root);
+    }
+
+
+    private void traversePostOrder(Node root) {
+        if(root == null) return;
+
+        traversePostOrder(root.leftChild);
+        traversePostOrder(root.rightChild);
+        System.out.println(root.data);
     }
 
 }
